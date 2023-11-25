@@ -10,19 +10,14 @@ import com.khomenok.librarysystem.service.UserService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
-
 @Component
 public class Seeder implements CommandLineRunner {
 
     private CategoryService categoryService;
     private RoleService roleService;
-
     private UserService userService;
     private UserRepository userRepository;
-
     private PasswordEncoder passwordEncoder;
-
-
     public Seeder(CategoryService categoryService, RoleService roleService,
                   UserService userService, UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.categoryService = categoryService;
