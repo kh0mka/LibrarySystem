@@ -15,22 +15,22 @@ public class Book {
     @Column(nullable = false)
     private String title;
 
-   @Column(nullable = false)
+    @Column(nullable = false)
     private String author;
 
-   private String image;
+    private String image;
 
-   @Column(columnDefinition = "TEXT")
-   private String description;
+    @Column(columnDefinition = "TEXT")
+    private String description;
 
-   @Column(nullable = false)
-   private int copies;
+    @Column(nullable = false)
+    private int copies;
 
     @Column(nullable = false)
     private int copiesAvailable;
 
-   @ManyToOne(optional = false)
-   private Category category;
+    @ManyToOne(optional = false)
+    private Category category;
 
     public Book() {
     }
