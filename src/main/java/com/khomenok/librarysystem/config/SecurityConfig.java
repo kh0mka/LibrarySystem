@@ -18,9 +18,7 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 public class SecurityConfig {
-
     private final String rememberMeKey;
-
     public SecurityConfig(@Value("${LibrarySystem.remember.me.key}")
                                  String rememberMeKey) {
         this.rememberMeKey = rememberMeKey;
@@ -29,15 +27,15 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity.authorizeHttpRequests(
-                // Define which urls are visible by which users
+                // Permissions to see URLs
                 authorizeRequests -> authorizeRequests
-                        // All static resources which are situated in js, images, css are available for anyone
+                        // Permissions to GET method to all static resources (such as CSS, JS, HTML)
                         .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-                        // Allow anyone to see the home page, the registration page and the login form
+                        // Permissions to see home page
                         .requestMatchers("/", "/users/login", "/users/register", "/users/login-error").permitAll()
                         .requestMatchers("/error").permitAll()
                         .requestMatchers("/admin/**").hasRole(RoleName.ADMIN.name())
-                        // all other requests are authenticated.
+                        // And the other - auth
                         .anyRequest().authenticated()
         ).formLogin(
                 formLogin -> {
@@ -77,8 +75,6 @@ public class SecurityConfig {
     public UserDetailsService userDetailsService(UserRepository userRepository) {
         return new ApplicationUserDetailsService(userRepository);
     }
-
-
     @Bean
     public PasswordEncoder passwordEncoder() {
         return Pbkdf2PasswordEncoder.defaultsForSpringSecurity_v5_8();

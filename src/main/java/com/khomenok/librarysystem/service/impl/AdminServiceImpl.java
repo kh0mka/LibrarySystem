@@ -109,7 +109,6 @@ public class AdminServiceImpl implements AdminService {
 
         List<UserDTO> userDTOs = new ArrayList<>();
 
-
         for (User user : users) {
             UserDTO userDTO = modelMapper.map(user, UserDTO.class);
             List<String> roles = user.getRoles().stream()
@@ -180,7 +179,4 @@ public class AdminServiceImpl implements AdminService {
         }
         return false;
     }
-
-
-
 }

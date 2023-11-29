@@ -21,7 +21,6 @@ import java.util.stream.Collectors;
 
 @Service
 public class ReviewServiceImpl implements ReviewService {
-
     private ReviewRepository reviewRepository;
 
     private UserService userService;
@@ -29,6 +28,7 @@ public class ReviewServiceImpl implements ReviewService {
     private BookService bookService;
 
     private CheckoutService checkoutService;
+
     private ModelMapper modelMapper;
 
     public ReviewServiceImpl(ReviewRepository reviewRepository, UserService userService,

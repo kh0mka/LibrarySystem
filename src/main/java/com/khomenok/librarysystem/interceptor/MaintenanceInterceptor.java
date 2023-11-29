@@ -15,6 +15,7 @@ import java.util.Map;
 public class MaintenanceInterceptor implements HandlerInterceptor {
 
     private boolean isMaintenanceMode = false;
+
     private ThymeleafViewResolver tlvr;
 
     public MaintenanceInterceptor(ThymeleafViewResolver tlvr) {
@@ -39,8 +40,6 @@ public class MaintenanceInterceptor implements HandlerInterceptor {
                 }
                 return false;
             }
-
             return true;
-
     }
 }

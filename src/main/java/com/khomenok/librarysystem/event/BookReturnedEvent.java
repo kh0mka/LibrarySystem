@@ -4,9 +4,7 @@ import com.khomenok.librarysystem.model.entity.Checkout;
 import org.springframework.context.ApplicationEvent;
 
 public class BookReturnedEvent extends ApplicationEvent {
-
     private Checkout checkout;
-
 
     public BookReturnedEvent(Object source) {
         super(source);

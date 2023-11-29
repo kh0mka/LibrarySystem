@@ -9,10 +9,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class ObjectNotFoundException extends RuntimeException {
 
     private String message;
-
     public ObjectNotFoundException(String message) {
         this.message = message;
     }
-
 
 }

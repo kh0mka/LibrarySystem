@@ -12,7 +12,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 @Component
 public class Seeder implements CommandLineRunner {
-
     private CategoryService categoryService;
     private RoleService roleService;
     private UserService userService;
@@ -48,6 +47,4 @@ public class Seeder implements CommandLineRunner {
         admin.getRoles().add(adminRole);
         this.userService.saveUser(admin);
     }
-
-
 }

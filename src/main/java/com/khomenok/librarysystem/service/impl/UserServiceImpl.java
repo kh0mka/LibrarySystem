@@ -44,8 +44,6 @@ public class UserServiceImpl implements UserService {
     }
 
 
-
-
     @Override
     public User getUser(String email) {
         // TODO: handled

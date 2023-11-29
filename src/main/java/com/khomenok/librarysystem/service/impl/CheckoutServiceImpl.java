@@ -101,7 +101,6 @@ public class CheckoutServiceImpl implements CheckoutService {
     }
 
     private Checkout getCheckout(String email, Long bookId) {
-//TODO: handled
         Optional<Checkout> optionalCheckout = this.checkoutRepository
                 .findByUserEmailAndBookId(email, bookId);
         if (optionalCheckout.isEmpty()) {

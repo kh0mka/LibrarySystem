@@ -157,7 +157,7 @@ public class AdminController {
     public String userCheckouts(@PathVariable Long id, Model model){
         List<CheckOutDTO> checkouts = this.checkoutService.getUserCheckouts(id);
         model.addAttribute("checkouts", checkouts);
-       String userEmail = this.adminService.getUserEmail(id);
+        String userEmail = this.adminService.getUserEmail(id);
         model.addAttribute("userEmail", userEmail);
         return "checkouts-admin";
     }
